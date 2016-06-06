@@ -15,7 +15,7 @@ var TodoSearch = React.createClass({
             type="search"
             ref="searchText"
             placeholder="Search todos"
-            onCharge={this.handleSearch}/>
+            onChange={this.handleSearch}/>
         </div>
         <div>
           <label>

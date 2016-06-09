@@ -1,0 +1,30 @@
+.container {
+  background      : $light-grey;
+  border          : 1px solid;
+  border-radius   : 5px;
+  padding: 0;
+  margin-bottom   : 2rem;
+}
+.container__header {
+  padding      : 1rem;
+  border-bottom: 1px solid $light-grey-border;
+  label {
+    font-size: 1rem;
+    cursor   : pointer;
+  }
+  > :last-child {
+    display    : flex;
+    align-items: center;
+  };
+}
+
+.container__message {
+  color: $light-color;
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.container__footer {
+  border-top: 2px solid $light-grey-border;
+  padding: 1rem 1rem 0 1rem;
+}

@@ -35,11 +35,10 @@ module.exports = {
         query: {
           presets: [
             'react', 'es2015', 'stage-0'
-          ],
-          compact: true
+          ]
         },
         test: /\.jsx?$/,
-        exclude: /(node_modules | bower_components)/
+        exclude: /(node_modules|bower_components)/
       }
     ]
   },

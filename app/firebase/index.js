@@ -1,15 +1,15 @@
 import firebase from 'firebase';
-
 try {
   var config = {
-    apiKey: "AIzaSyChJ7tEz8UzLwdBX6KeepcfrwFzp9-VQjM",
-    authDomain: "whs-todo-app.firebaseapp.com",
-    databaseURL: "https://whs-todo-app.firebaseio.com",
-    storageBucket: "whs-todo-app.appspot.com"
+    apiKey: process.env.API_KEY,
+    authDomain: process.env.AUTH_DOMAIN,
+    databaseURL: process.env.DATABASE_URL,
+    storageBucket: process.env.STORAGE_BUCKET
   };
+
   firebase.initializeApp(config);
-} catch (e) {
-  
+} catch(e) {
+
 }
 
 export var firebaseRef = firebase.database().ref();

@@ -1,11 +1,11 @@
 import firebase from 'firebase';
-var config = {
-  apiKey: "AIzaSyChJ7tEz8UzLwdBX6KeepcfrwFzp9-VQjM",
-  authDomain: "whs-todo-app.firebaseapp.com",
-  databaseURL: "https://whs-todo-app.firebaseio.com",
-  storageBucket: "whs-todo-app.appspot.com"
-};
 
+var config = {
+  apiKey: "AIzaSyD_9fsTH8TiSdhYGD_4mzGbzwDxA7vW5w0",
+  authDomain: "mead-todo-app-23821.firebaseapp.com",
+  databaseURL: "https://mead-todo-app-23821.firebaseio.com",
+  storageBucket: "mead-todo-app-23821.appspot.com",
+};
 firebase.initializeApp(config);
 
 var firebaseRef = firebase.database().ref();
@@ -17,22 +17,21 @@ firebaseRef.set({
   },
   isRunning: true,
   user: {
-    name: 'william',
-    age: 24
+    name: 'Andrew',
+    age: 25
   }
 });
 
-// firebaseRef.child('app').once('value').then((snapshot) => {
-//   console.log('got entire database ', snapshot.key, snapshot.val());
-// },(e) => {
-//     'unable to fetch value', e
-// });
+var todosRef = firebaseRef.child('todos');
 
-var logData = (snapshot) => {
-  console.log('got value', snapshot.val());
-};
-firebaseRef.on('value',logData)
-firebaseRef.off();
-firebaseRef.update({
-  isRunning:false
+todosRef.on('child_added', (snapshot) => {
+  console.log('New todo added', snapshot.key, snapshot.val());
+});
+
+todosRef.push({
+  text: 'Todo 1'
+});
+
+todosRef.push({
+  text: 'Todo 2'
 });
